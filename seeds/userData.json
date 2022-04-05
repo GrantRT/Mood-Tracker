@@ -1,18 +1,17 @@
 [
-    {
-      "name": "Lisa",
-      "email": "lg1234@hotmail.com",
-      "password": "l1sa987"
-    },
-    {
-      "name": "Grant",
-      "email": "Gr0nt456@gmail.com",
-      "password": "Grant7364"
-    },
-    {
-      "name": "Komal",
-      "email": "k0mal111.com",
-      "password": "K0mal456"
-    }
-  ]
-  
+  {
+    "username": "Lisa",
+    "email": "lg1234@hotmail.com",
+    "password": "l1sa987"
+  },
+  {
+    "username": "Grant",
+    "email": "Gr0nt456@gmail.com",
+    "password": "Grant7364"
+  },
+  {
+    "username": "Komal",
+    "email": "k0mal111.com",
+    "password": "K0mal456"
+  }
+]
