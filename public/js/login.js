@@ -17,11 +17,9 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the home page
       document.location.replace('/');
     } else {
-      alert('not working');
+      alert(response.statusText);
     }
   }
 };
-
-
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
