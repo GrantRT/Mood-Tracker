@@ -21,6 +21,7 @@
                     <ion-icon name="home-outline"></ion-icon>
                     Home
                 </a>
+                 {{#if logged_in}}
                 <a href="/dashboard" class="navbar-item has-text-success-dark is-size-4">
                <ion-icon name="cellular-outline"></ion-icon>
                     Dashboard
@@ -52,6 +53,7 @@
                 </a>
               </div>
             </div>
+            {{else}}
         </section>
    
         <section class="navbar-end">
@@ -66,6 +68,7 @@
               </div>
             </div>
         </section>
+        {{/if}}
     </nav>
     <div class="card">
         <header class="card-header has-background-primary">
@@ -74,8 +77,11 @@
             </p>
         </header>
     </div>
+    {{{body}}}
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+     {{/if}}
     </body>
 </html>
