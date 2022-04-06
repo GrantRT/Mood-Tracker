@@ -1,0 +1,50 @@
+{{! sign up }}
+ <form class="form signup-form">
+<section class="hero-body">
+<div class="card m-6" id='login-signup-container'>
+  <header class="card-header has-background-primary-light">
+      <p class="card-header-title has-text-success-dark is-size-2">Sign Up</p>
+  </header>
+  <div class="card-content has-background-primary">
+    <div class="field">
+      <label class="label has-text-grey-dark">Username</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input is-success" type="text" id='username-signup' placeholder="Enter Username Here" >
+        <span class="icon is-small is-left">
+          <ion-icon name="person-outline"></ion-icon>
+        </span>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label has-text-grey-dark">email</label>
+      <div class="control has-icons-left has-icons-right">
+        <!-- Email input -->
+        <input class="input is-success" type="text" placeholder="Enter Email Here"  id='email-signup'>
+        <span class="icon is-small is-left">
+          <ion-icon name="mail-outline"></ion-icon>
+        </span>
+      </div>
+  </div>
+  <div class="field">
+      <label class="label has-text-grey-dark">Password</label>
+      <div class="control has-icons-left has-icons-right">
+        <!-- Password input -->
+        <input class="input is-success" type='password' placeholder="Enter Password Here" id='password-signup'>
+        <span class="icon is-small is-left">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </span>
+       </div>
+  </div>
+  <div class="field">
+      <p class="control">
+        <button type='submit' class="button has-background-primary-light has-text-success-dark">
+          <div class="has-text-weight-bold">Sign Up</div>
+        </button>
+      </p>
+  </div>
+</section>
+ </div>
+ </form>
+ <script src='./js/signup.js'></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
