@@ -8,68 +8,34 @@
   <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
 </head>
 <body class="has-background-primary-dark">
-     <nav class="navbar has-background-success-light">
+     <nav class="tabs is-boxed is-large navbar has-background-success-light">
          <!-- navbar-brand is on the left and is the logo -->
         <div class="navbar-brand">
             <a>
                 <img src="/images/smiley.jpeg" width="112" height="28">
             </a>
         </div>
-        <section class="navbar-menu">
-            <div class="navbar-start">
+        <section class="tabs is boxed">
+            <ul>
+              <li>
                 <a href="/" class="navbar-item has-text-success-dark is-size-4">
                     <ion-icon name="home-outline"></ion-icon>
                     Home
                 </a>
+              </li>
                   {{#if logged_in}}
-                <a href="/dashboard" class="navbar-item has-text-success-dark is-size-4">
-               <ion-icon name="cellular-outline"></ion-icon>
+              <li>
+                  <a href="/dashboard" class="navbar-item has-text-success-dark is-size-4">
+                    <ion-icon name="cellular-outline"></ion-icon>
                     Dashboard
-                </a>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link has-text-success-dark is-size-4">
+                 </a>
+              </li>
+              <li class="is-active">
+                <a href="#Contact-Information" class="is-size-6-mobile is-size-6-tablet is-size-4-desktop is-size-2-fullhd has-text-success-dark">
                     <ion-icon name="chatbubbles-outline"></ion-icon>
-                      Contact Us
-                    </a>
-                    <div class="navbar-dropdown">
-                      <ul class="menu-list">
-                    <li>
-                      <a class="has-background-primary has-text-success-dark is-size-4">Github
-                        <ion-icon name="logo-github"></ion-icon>
-                      </a>
-                      <ul>
-                        <li><a href="https://github.com/LisaCR01">Lisa</a></li>
-                        <li><a href="https://github.com/GrantRT">Grant</a></li>
-                        <li><a href="https://github.com/KJ234">Komal</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <ul class="menu-list">
-                    <li>
-                      <a class="has-background-primary has-text-success-dark is-size-4">Email
-                        <ion-icon name="mail-outline"></ion-icon>
-                      </a>
-                      <ul>
-                        <li><a href="mailto:lcrgunn@gmail.com">Lisa</a></li>
-                        <li><a href="mailto:granto_92@hotmail.com">Grant</a></li>
-                        <li><a href="mailto:Komaljaved308@gmail.com">Komal</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <ul class="menu-list">
-                    <li>
-                      <a class="has-background-primary has-text-success-dark is-size-4">LinkedIn
-                        <ion-icon name="logo-linkedin"></ion-icon>
-                      </a>
-                      <ul>
-                        <li><a href="https://www.linkedin.com/in/LisaCR01">Lisa</a></li>
-                        <li><a href="https://www.linkedin.com/in/grant-tolhurst-6aa374224/">Grant</a></li>
-                        <li><a href="https://www.linkedin.com/in/komal-javed-2b55a3232/">Grant</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                 </div>
-                </div>
+                    Contact Us
+                </a>
+              </li>
         </section>
 
       <section class="navbar-end">
