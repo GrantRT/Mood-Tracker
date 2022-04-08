@@ -1,20 +1,7 @@
 <input id='sliderMedium' class='slider is-medium is-fullwidth is-circle' min='0' max='10' value='5' step='1' type='range' />
 <output for='sliderMedium' id='sliderMediumTooltip' class='has-output-tooltip'>5</output>
-
-<div class="card m-6">
-  <div class="card-image">
-    <canvas id='moodChart'></canvas>
-  </div>
-  <div class="card-content">
-    <header class="card-header p-4 has-background-success-light">Please Submit your mood on a scale of 0</p>
-    <ion-icon name="thumbs-down-outline"></ion-icon>
-    <p>to 10 </p>
-    <ion-icon name="thumbs-up-outline"></ion-icon>
-    </header>
-    <input id='sliderMedium' class='slider is-fullwidth is-success is-circle' min='0' max='10' value='5' step='1' type='range' />
-    <output for='sliderMedium' id='sliderMediumTooltip' class='has-output-tooltip'>5</output>
-  </div>
+<div>
+  <canvas id='moodChart'></canvas>
 </div>
 
 <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
-<script src='./js/dashboard.js'></script>
