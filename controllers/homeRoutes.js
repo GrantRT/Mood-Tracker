@@ -52,4 +52,6 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
+router.get("/links", async (req, res) => {});
+
 module.exports = router;
