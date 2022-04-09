@@ -1,12 +1,59 @@
-<div class="card m-6">
-<div class="card-image">
-  <canvas id='moodChart'></canvas>
-</div>
-    <div class="card-content" id="slider-card">
-      <label></label>
-    <input type="range" min="0" max="10" value="50" class="slider" id="myRange">
-    <p>Value: <span id="demo"></span></p>
+<div class='card m-6'>
+  <div class='card-image'>
+    <canvas id='moodChart'></canvas>
+  </div>
+  <form class='todays-mood-form'>
+    <div class='card-content'>
+      <div class='slider-card'>
+        <input type='range' min='0' max='10' value='50' class='slider' id='myRange' />
+        <output class='bubble'></output>
+        <label class="level">
+          <span class="level-item icon has-text-centered">
+            <i class="far fa-sad-cry fa-2x"></i>
+          </span>
+          <span class="level-item icon has-text-centered">
+            <i class="far fa-tired fa-2x"></i>
+          </span>
+          <span class="level-item icon has-text-centered">
+            <i class="far fa-sad-tear fa-2x"></i>
+          </span>
+          <span class="level-item icon has-text-centered">
+            <i class="far fa-frown fa-2x"></i>
+          </span>
+          <span class="level-item icon has-text-centered">
+            <i class="far fa-frown-open fa-2x"></i>
+          </span>
+          <span class="level-item icon has-text-centered">
+            <i class="fa-regular fa-face-meh fa-2x"></i> 
+          </span>
+          <span class="level-item icon has-text-centered">
+            <i class="fa-regular fa-face-smile fa-2x"></i> 
+          </span>
+          <span class="level-item icon has-text-centered">
+             <i class="fa-regular fa-face-smile-beam fa-2x"></i>            
+          </span>
+          <span class="level-item icon has-text-centered">
+             <i class="fa-regular fa-face-smile-beam fa-2x"></i>
+          </span>
+          <span class="level-item icon has-text-centered">
+             <i class="far fa-laugh-beam fa-2x"></i>         
+          </span>
+          <span class="level-item icon has-text-centered">
+            <i class="fa-regular fa-face-grin-squint fa-2x"></i>           
+          </span>
+        </label>
+      </div>
     </div>
+    <div class="level p-4">
+      <div class="level-item has-text-centered">
+        <button type='submit' class="button has-background-primary-light has-text-success-dark ">
+          <div class="has-text-weight-bold is-size-4-tablet">Submit</div>
+        </button>
+      </div>
+    </div>
+  </form>
 </div>
+<script src='https://unpkg.com/dayjs@1.8.21/dayjs.min.js'></script>
+<script src='https://unpkg.com/dayjs@1.8.21/plugin/weekOfYear.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
 <script src='./js/dashboard.js'></script>
