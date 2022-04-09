@@ -27,4 +27,18 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+// Post a mood
+router.post('/', withAuth, async (req, res) => {
+  try {
+    const newMood = await Mood.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newMood);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;
