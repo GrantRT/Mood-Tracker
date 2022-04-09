@@ -10,7 +10,7 @@
   <script src="https://kit.fontawesome.com/9ad29ddbed.js" crossorigin="anonymous"></script>
 </head>
 <body>
-     <nav class="tabs is-boxed is-large navbar has-background-success-light">
+     <nav class="is-hidden-mobile tabs is-boxed is-large navbar has-background-success-light">
          <!-- navbar-brand is on the left and is the logo -->
         <div class="navbar-brand is-hidden-touch ">
             <a>
@@ -63,6 +63,46 @@
         </section>
         {{/if}}
     </nav>
+    <nav class="menu is-hidden-tablet">
+            <ul class=" menu-list level">
+                <li class="level-item has-text-centered">
+                  <a href="/" class="list-nav is-size-4 is-size-2-fullhd has-text-success-dark has-background-success-light">
+                    <ion-icon name="home-outline"></ion-icon>
+                    Home
+                </a>
+                </li>
+                {{#if logged_in}}
+                <li class="level-item has-text-centered">
+                  <a href="/dashboard" class="list-nav is-size-4 is-size-2-fullhd has-text-success-dark has-background-success-light">
+                    <ion-icon name="cellular-outline"></ion-icon>
+                    Dashboard
+                 </a>
+                </li>
+                <li class="level-item has-text-centered">
+                  <a href="/links" class="list-nav is-size-4 is-size-2-fullhd has-text-success-dark has-background-success-light">
+                   <ion-icon name="unlink-outline"></ion-icon>
+                    Links
+                 </a>
+                </li>
+                <li class="level-item has-text-centered ">
+                  <a href="/logout" id="logout" class="list-nav has-background-primary as-text-success-light is-size-4 is-size-2-fullhd">
+                    <strong>Log Out</strong>
+                </a>
+                </li>
+                {{else}}
+                <li class="level-item has-text-centered">
+                  <a href="/signup" class="list-nav has-background-primary-dark has-text-success-light is-size-4 is-size-2-fullhd">
+                    <strong>Sign Up</strong>
+                </a>
+                </li>
+                <li class="level-item has-text-centered">
+                  <a href="/login" class="list-nav has-background-primary has-text-success-dark is-size-4 is-size-2-fullhd">
+                    <strong>Log In</strong>
+                </a>
+                </li>
+            </ul> 
+            {{/if}} 
+      </nav>
     <div class="card">
         <header class="card-header has-background-primary">
             <p class="card-header-title has-text-success-light is-size-4 is-size-2-desktop">Mood Tracker
