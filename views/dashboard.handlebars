@@ -4,15 +4,22 @@
   </div>
   <form class='todays-mood-form'>
     <div class='card-content'>
-      <div class="level">
-        <p class="level-item">
-           Please Select how you are feeling today out of 0 <i class="far fa-sad-cry"></i> to 10 <i class="fa-regular fa-face-grin-squint"></i> 
+      <div>
+        <p class="level-item icon-text is-size-6 is-size-4-desktop">
+           <span>Please Select how you are feeling today out of 0</span>
+              <span class="icon">
+                <i class="far fa-sad-cry"></i>
+              </span>
+              <span>to ten</span>
+              <span class="icon">
+                <i class="fa-regular fa-face-grin-squint"></i>
+              </span>
        </p>
       </div>
       <div class='slider-card'>
         <input type='range' min='0' max='10' value='50' class='slider' id='myRange' />
         <output class='bubble'></output>
-        <label class="level">
+        <label class="level is-hidden-mobile">
           <span class="level-item icon has-text-centered">
             <i class="far fa-sad-cry fa-2x"></i>
           </span>
