@@ -1,3 +1,5 @@
+dayjs.extend(window.dayjs_plugin_weekOfYear);
+
 const allRanges = document.querySelectorAll('.slider-card');
 allRanges.forEach((wrap) => {
   const slider = wrap.querySelector('.slider');
@@ -20,20 +22,22 @@ function setBubble(slider, bubble) {
   bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
 }
 
-mondayDataArr = [];
-tuesdayDataArr = [];
-wednesdayDataArr = [];
-thursdayDataArr = [];
-fridayDataArr = [];
-saturdayDataArr = [];
-sundayDataArr = [];
+const mondayDataArr = [];
+const tuesdayDataArr = [];
+const wednesdayDataArr = [];
+const thursdayDataArr = [];
+const fridayDataArr = [];
+const saturdayDataArr = [];
+const sundayDataArr = [];
 
 // Get todays day
-const todaysDay = () => {
+const todaysDayAndWeek = () => {
   const today = new Date();
-  if (today.getDay() == 6) {
-    return 'saturday';
-  }
+  const week = dayjs(today).week();
+  const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  const day = daysOfWeek[today.getDay()];
+
+  return { day, week };
 };
 
 // Todo: Submit the users current mood to populate the database and chart.
@@ -42,14 +46,16 @@ const moodFormHandler = async (event) => {
 
   // Collect values from the mood form
   const mood = document.querySelector('#myRange').value;
-  let day = { [todaysDay()]: parseInt(mood) };
+  const { week, day } = todaysDayAndWeek();
+  const dayMood = { [day]: parseInt(mood) };
 
   if (mood) {
     const response = await fetch('/api/moods', {
       method: 'POST',
-      body: JSON.stringify({ ...day }),
+      body: JSON.stringify({ week, day: dayMood }),
       headers: { 'Content-Type': 'application/json' },
     });
+    console.log(response);
     if (response.ok) {
       document.location.reload();
     } else {
@@ -66,7 +72,6 @@ const getMoodData = async () => {
     },
   });
   const data = await response.json();
-
   const mondayData = data[data.length - 1].monday;
   const tuesdayData = data[data.length - 1].tuesday;
   const wednesdayData = data[data.length - 1].wednesday;
@@ -76,7 +81,6 @@ const getMoodData = async () => {
   const sundayData = data[data.length - 1].sunday;
   mondayDataArr.push(mondayData);
   tuesdayDataArr.push(tuesdayData);
-  wednesdayDataArr.push(wednesdayData);
   wednesdayDataArr.push(wednesdayData);
   thursdayDataArr.push(thursdayData);
   fridayDataArr.push(fridayData);
