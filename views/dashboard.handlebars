@@ -1,13 +1,16 @@
-<div class="card m-6">
-  <div class="card-image">
+<div class='card m-6'>
+  <div class='card-image'>
     <canvas id='moodChart'></canvas>
   </div>
-  <div class="card-content">
-    <div class="slider-card">
-        <input type="range" min="0" max="10" value="50" class="slider" id="myRange">
-        <output class="bubble"></output>
+  <form class='todays-mood-form'>
+    <div class='card-content'>
+      <div class='slider-card'>
+        <input type='range' min='0' max='10' value='50' class='slider' id='myRange' />
+        <output class='bubble'></output>
+      </div>
     </div>
-  </div>
+    <button type='submit'>Submit</button>
+  </form>
 </div>
 <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
 <script src='./js/dashboard.js'></script>
