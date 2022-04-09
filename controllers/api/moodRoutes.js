@@ -3,15 +3,6 @@ const router = require('express').Router();
 const { Mood } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// router.get('/', async (req, res) => {
-//   try {
-//     const moodData = await Mood.findAll({});
-//     res.status(200).json(moodData);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-
 // get mood data of logged in user
 router.get('/', withAuth, async (req, res) => {
   try {
