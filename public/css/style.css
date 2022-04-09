@@ -39,14 +39,14 @@
 
 @media only screen and (min-width: 769px) {
     .dashboard-card {
-        margin:10px;
+        margin:25px;
     }
 
   }
 
   @media only screen and (min-width: 1024px) {
     .dashboard-card {
-        margin:20px;
+        margin:30px;
     }
 
   }
