@@ -37,17 +37,17 @@ const todaysDay = () => {
 };
 
 // Todo: Submit the users current mood to populate the database and chart.
-moodFormHandler = async (event) => {
+const moodFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the mood form
   const mood = document.querySelector('#myRange').value;
-  let day = { [todaysDay()]: mood };
-  console.log(day);
+  let day = { [todaysDay()]: parseInt(mood) };
+
   if (mood) {
     const response = await fetch('/api/moods', {
       method: 'POST',
-      body: JSON.stringify({ day }),
+      body: JSON.stringify({ ...day }),
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
@@ -67,21 +67,21 @@ const getMoodData = async () => {
   });
   const data = await response.json();
 
-  const mondayData = await data[data.length - 1].monday;
-  const tuesdayData = await data[data.length - 1].tuesday;
-  const wednesdayData = await data[data.length - 1].wednesday;
-  const thursdayData = await data[data.length - 1].thursday;
-  const fridayData = await data[data.length - 1].friday;
-  const saturdayData = await data[data.length - 1].saturday;
-  const sundayData = await data[data.length - 1].sunday;
-  await mondayDataArr.push(mondayData);
-  await tuesdayDataArr.push(tuesdayData);
-  await wednesdayDataArr.push(wednesdayData);
-  await wednesdayDataArr.push(wednesdayData);
-  await thursdayDataArr.push(thursdayData);
-  await fridayDataArr.push(fridayData);
-  await saturdayDataArr.push(saturdayData);
-  await sundayDataArr.push(sundayData);
+  const mondayData = data[data.length - 1].monday;
+  const tuesdayData = data[data.length - 1].tuesday;
+  const wednesdayData = data[data.length - 1].wednesday;
+  const thursdayData = data[data.length - 1].thursday;
+  const fridayData = data[data.length - 1].friday;
+  const saturdayData = data[data.length - 1].saturday;
+  const sundayData = data[data.length - 1].sunday;
+  mondayDataArr.push(mondayData);
+  tuesdayDataArr.push(tuesdayData);
+  wednesdayDataArr.push(wednesdayData);
+  wednesdayDataArr.push(wednesdayData);
+  thursdayDataArr.push(thursdayData);
+  fridayDataArr.push(fridayData);
+  saturdayDataArr.push(saturdayData);
+  sundayDataArr.push(sundayData);
   renderWeeklyChart();
 };
 
