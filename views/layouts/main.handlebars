@@ -63,7 +63,14 @@
         </section>
         {{/if}}
     </nav>
-    <nav class="menu is-hidden-tablet">
+    <div class="card">
+        <header class="card-header has-background-primary">
+            <p class="card-header-title has-text-success-light is-size-4 is-size-2-desktop">Mood Tracker
+              <ion-icon name="happy-outline"></ion-icon>
+            </p>
+        </header>
+    </div>
+<nav class="menu is-hidden-tablet">
             <ul class=" menu-list level">
                 <li class="level-item has-text-centered">
                   <a href="/" class="list-nav is-size-4 is-size-2-fullhd has-text-success-dark has-background-success-light">
@@ -84,7 +91,13 @@
                     Links
                  </a>
                 </li>
-                <li class="level-item has-text-centered ">
+                <li class="level-item has-text-centered">
+                 <a href="#Contact-Information" class="list-nav is-size-4 is-size-2-fullhd has-text-success-dark has-background-success-light">
+                    <ion-icon name="chatbubbles-outline"></ion-icon>
+                    Contact Us
+                  </a>
+                </li>
+                <li class="level-item has-text-centered">
                   <a href="/logout" id="logout" class="list-nav has-background-primary as-text-success-light is-size-4 is-size-2-fullhd">
                     <strong>Log Out</strong>
                 </a>
@@ -103,13 +116,6 @@
             </ul> 
             {{/if}} 
       </nav>
-    <div class="card">
-        <header class="card-header has-background-primary">
-            <p class="card-header-title has-text-success-light is-size-4 is-size-2-desktop">Mood Tracker
-              <ion-icon name="happy-outline"></ion-icon>
-            </p>
-        </header>
-    </div>
     {{{body}}}
     <footer>
       <div class="columns" id="Contact-Information">
