@@ -9,10 +9,10 @@
   <link rel='stylesheet' href='/css/style.css' />
   <script src="https://kit.fontawesome.com/9ad29ddbed.js" crossorigin="anonymous"></script>
 </head>
-<body class="has-background-primary-dark">
+<body>
      <nav class="tabs is-boxed is-large navbar has-background-success-light">
          <!-- navbar-brand is on the left and is the logo -->
-        <div class="navbar-brand">
+        <div class="navbar-brand is-hidden-touch ">
             <a>
                 <img src="/images/smiley.jpeg" width="112" height="28">
             </a>
@@ -20,32 +20,32 @@
         <section class="tabs is boxed">
             <ul>
               <li>
-                <a href="/" class="is-size-6-mobile is-size-6-tablet is-size-4-desktop is-size-2-fullhd has-text-success-dark">
+                <a href="/" class="is-size-4 is-size-2-fullhd has-text-success-dark">
                     <ion-icon name="home-outline"></ion-icon>
                     Home
                 </a>
               </li>
                   {{#if logged_in}}
               <li>
-                  <a href="/dashboard" class="is-size-6-mobile is-size-6-tablet is-size-4-desktop is-size-2-fullhd has-text-success-dark">
+                  <a href="/dashboard" class="is-size-4 is-size-2-fullhd has-text-success-dark">
                     <ion-icon name="cellular-outline"></ion-icon>
                     Dashboard
                  </a>
               </li>
                <li>
-                  <a href="/links" class="is-size-6-mobile is-size-6-tablet is-size-4-desktop is-size-2-fullhd has-text-success-dark">
+                  <a href="/links" class="is-size-4 is-size-2-fullhd has-text-success-dark">
                    <ion-icon name="unlink-outline"></ion-icon>
                     Links
                  </a>
               </li>
               <li >
-                <a href="#Contact-Information" class="is-size-6-mobile is-size-6-tablet is-size-4-desktop is-size-2-fullhd has-text-success-dark">
+                <a href="#Contact-Information" class=" is-size-4 is-size-2-fullhd has-text-success-dark">
                     <ion-icon name="chatbubbles-outline"></ion-icon>
                     Contact Us
                 </a>
               </li>
               <li class="is-active">
-                <a href="/logout" id="logout" class="has-background-primary has-text-success-dark is-size-4-desktop is-size-2-fullhd">
+                <a href="/logout" id="logout" class="has-background-primary has-text-success-dark is-size-4 is-size-2-fullhd">
                     <strong>Log Out</strong>
                 </a>
               </li>
@@ -73,7 +73,7 @@
     {{{body}}}
     <footer>
       <div class="columns" id="Contact-Information">
-      <div class="column has-background-primary">
+      <div class="column has-background-success-light">
       <ul class="menu-list px-20">
           <li>
             <a class="has-background-primary-dark has-text-success-light is-size-4 is-size-2-fullhd">Github
@@ -87,7 +87,7 @@
           </li>
         </ul>
         </div>
-        <div class="column has-background-primary">
+        <div class="column has-background-success-light">
         <ul class="menu-list">
           <li>
              <a class="has-background-primary-dark has-text-success-light is-size-4 is-size-2-fullhd">Email
@@ -101,7 +101,7 @@
           </li>
         </ul>
         </div>
-        <div class="column column has-background-primary">
+        <div class="column column has-background-success-light">
         <ul class="menu-list">
           <li>
              <a class="has-background-primary-dark has-text-success-light is-size-4 is-size-2-fullhd">LinkedIn
