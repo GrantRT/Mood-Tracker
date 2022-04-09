@@ -20,11 +20,34 @@ router.get('/', withAuth, async (req, res) => {
 
 // Post a mood
 router.post('/', withAuth, async (req, res) => {
+  console.log(req.body);
   try {
-    const newMood = await Mood.create({
-      ...req.body,
-      user_id: req.session.user_id,
+    let newMood;
+    const week = await Mood.findOne({
+      where: {
+        week: req.body.week,
+        user_id: req.session.user_id,
+      },
     });
+    if (week) {
+      console.log('found week');
+      newMood = await Mood.update(
+        { ...req.body.day },
+        {
+          where: {
+            week: req.body.week,
+            user_id: req.session.user_id,
+          },
+        }
+      );
+      console.log({ newMood });
+    } else {
+      newMood = await Mood.create({
+        week: req.body.week,
+        ...req.body.day,
+        user_id: req.session.user_id,
+      });
+    }
 
     res.status(200).json(newMood);
   } catch (err) {
