@@ -71,6 +71,7 @@
         </header>
     </div>
 <nav class="menu is-hidden-tablet">
+  <section>
             <ul class=" menu-list level">
                 <li class="level-item has-text-centered">
                   <a href="/" class="list-nav is-size-4 is-size-2-fullhd has-text-success-dark has-background-success-light">
@@ -98,7 +99,7 @@
                   </a>
                 </li>
                 <li class="level-item has-text-centered">
-                  <a href="/logout" id="logout" class="list-nav has-background-primary as-text-success-light is-size-4 is-size-2-fullhd">
+                  <a href="/logout" id="logout-mobile" class="list-nav has-background-primary as-text-success-light is-size-4 is-size-2-fullhd">
                     <strong>Log Out</strong>
                 </a>
                 </li>
@@ -114,8 +115,10 @@
                 </a>
                 </li>
             </ul> 
-            {{/if}} 
+          </section>
+        {{/if}}
       </nav>
+
     {{{body}}}
     <footer>
       <div class="columns" id="Contact-Information">
