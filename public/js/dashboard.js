@@ -35,7 +35,8 @@ const todaysDayAndWeek = () => {
   const today = new Date();
   const week = dayjs(today).week();
   const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-  const day = daysOfWeek[today.getDay()];
+  const day = 'friday';
+  // const day = daysOfWeek[today.getDay()];
 
   return { day, week };
 };
@@ -122,7 +123,7 @@ const renderWeeklyChart = () => {
       plugins: {
         title: {
           display: true,
-          text: 'Min and Max Settings',
+          text: 'Your weekly mood',
         },
       },
       scales: {
