@@ -35,8 +35,7 @@ const todaysDayAndWeek = () => {
   const today = new Date();
   const week = dayjs(today).week();
   const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-  const day = 'friday';
-  // const day = daysOfWeek[today.getDay()];
+  const day = daysOfWeek[today.getDay()];
 
   return { day, week };
 };
