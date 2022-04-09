@@ -1,36 +1,68 @@
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value; // Display the default slider value
+dayjs.extend(window.dayjs_plugin_weekOfYear);
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
+const allRanges = document.querySelectorAll('.slider-card');
+allRanges.forEach((wrap) => {
+  const slider = wrap.querySelector('.slider');
+  const bubble = wrap.querySelector('.bubble');
+
+  slider.addEventListener('input', () => {
+    setBubble(slider, bubble);
+  });
+  setBubble(slider, bubble);
+});
+
+function setBubble(slider, bubble) {
+  const val = slider.value;
+  const min = slider.min ? slider.min : 0;
+  const max = slider.max ? slider.max : 100;
+  const newVal = Number(((val - min) * 100) / (max - min));
+  bubble.innerHTML = val;
+
+  // Sorta magic numbers based on size of the native UI thumb
+  bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
 }
 
-// To do: make chart dynamic
+const mondayDataArr = [];
+const tuesdayDataArr = [];
+const wednesdayDataArr = [];
+const thursdayDataArr = [];
+const fridayDataArr = [];
+const saturdayDataArr = [];
+const sundayDataArr = [];
 
-mondayDataArr = [];
-tuesdayDataArr = [];
-wednesdayDataArr = [];
-thursdayDataArr = [];
-fridayDataArr = [];
-saturdayDataArr = [];
-sundayDataArr = [];
+// Get todays day
+const todaysDayAndWeek = () => {
+  const today = new Date();
+  const week = dayjs(today).week();
+  const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  const day = daysOfWeek[today.getDay()];
 
-// const getMoodData = () => {
-//   fetch('/api/moods', {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   })
-//     .then((response) => response.json())
-//     .then((data) => {
-//       // data.length -1 to make sure you get the most recent weeks data
-//       const mondayData = data[data.length - 1].monday;
-//       mondayDataArr.push(mondayData);
-//     });
-// };
+  return { day, week };
+};
+
+// Todo: Submit the users current mood to populate the database and chart.
+const moodFormHandler = async (event) => {
+  event.preventDefault();
+
+  // Collect values from the mood form
+  const mood = document.querySelector('#myRange').value;
+  const { week, day } = todaysDayAndWeek();
+  const dayMood = { [day]: parseInt(mood) };
+
+  if (mood) {
+    const response = await fetch('/api/moods', {
+      method: 'POST',
+      body: JSON.stringify({ week, day: dayMood }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    console.log(response);
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
 
 const getMoodData = async () => {
   const response = await fetch('/api/moods', {
@@ -40,22 +72,20 @@ const getMoodData = async () => {
     },
   });
   const data = await response.json();
-
-  const mondayData = await data[data.length - 1].monday;
-  const tuesdayData = await data[data.length - 1].tuesday;
-  const wednesdayData = await data[data.length - 1].wednesday;
-  const thursdayData = await data[data.length - 1].thursday;
-  const fridayData = await data[data.length - 1].friday;
-  const saturdayData = await data[data.length - 1].saturday;
-  const sundayData = await data[data.length - 1].sunday;
-  await mondayDataArr.push(mondayData);
-  await tuesdayDataArr.push(tuesdayData);
-  await wednesdayDataArr.push(wednesdayData);
-  await wednesdayDataArr.push(wednesdayData);
-  await thursdayDataArr.push(thursdayData);
-  await fridayDataArr.push(fridayData);
-  await saturdayDataArr.push(saturdayData);
-  await sundayDataArr.push(sundayData);
+  const mondayData = data[data.length - 1].monday;
+  const tuesdayData = data[data.length - 1].tuesday;
+  const wednesdayData = data[data.length - 1].wednesday;
+  const thursdayData = data[data.length - 1].thursday;
+  const fridayData = data[data.length - 1].friday;
+  const saturdayData = data[data.length - 1].saturday;
+  const sundayData = data[data.length - 1].sunday;
+  mondayDataArr.push(mondayData);
+  tuesdayDataArr.push(tuesdayData);
+  wednesdayDataArr.push(wednesdayData);
+  thursdayDataArr.push(thursdayData);
+  fridayDataArr.push(fridayData);
+  saturdayDataArr.push(saturdayData);
+  sundayDataArr.push(sundayData);
   renderWeeklyChart();
 };
 
@@ -92,7 +122,7 @@ const renderWeeklyChart = () => {
       plugins: {
         title: {
           display: true,
-          text: 'Min and Max Settings',
+          text: 'Your weekly mood',
         },
       },
       scales: {
@@ -107,5 +137,4 @@ const renderWeeklyChart = () => {
   const moodChart = new Chart(document.getElementById('moodChart'), config);
 };
 
-
-// get mood data
+document.querySelector('.todays-mood-form').addEventListener('submit', moodFormHandler);

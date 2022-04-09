@@ -11,6 +11,10 @@ Mood.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    week: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     monday: {
       type: DataTypes.INTEGER,
       allowNull: true,

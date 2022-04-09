@@ -1,32 +1,35 @@
 [
-    {
-        "monday":5,
-        "tuesday":8,
-        "wednesday":7,
-        "thursday":2,
-        "friday":9,
-        "saturday":10,
-        "sunday":8,
-        "user_id":2
-    },
-    {
-        "monday":2,
-        "tuesday":4,
-        "wednesday":6,
-        "thursday":5,
-        "friday":10,
-        "saturday":9,
-        "sunday":6,
-        "user_id":1
-    },
-    {
-        "monday":7,
-        "tuesday":3,
-        "wednesday":0,
-        "thursday":4,
-        "friday":9,
-        "saturday":8,
-        "sunday":10,
-        "user_id":3
-    }
+  {
+    "week": 15,
+    "monday": 5,
+    "tuesday": 8,
+    "wednesday": 7,
+    "thursday": 2,
+    "friday": 9,
+    "saturday": 10,
+    "sunday": 8,
+    "user_id": 2
+  },
+  {
+    "week": 15,
+    "monday": 2,
+    "tuesday": 4,
+    "wednesday": 6,
+    "thursday": 5,
+    "friday": 10,
+    "saturday": 9,
+    "sunday": 6,
+    "user_id": 1
+  },
+  {
+    "week": 15,
+    "monday": 7,
+    "tuesday": 3,
+    "wednesday": 0,
+    "thursday": 4,
+    "friday": 9,
+    "saturday": 8,
+    "sunday": 10,
+    "user_id": 3
+  }
 ]

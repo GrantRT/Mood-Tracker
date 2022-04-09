@@ -3,15 +3,6 @@ const router = require('express').Router();
 const { Mood } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// router.get('/', async (req, res) => {
-//   try {
-//     const moodData = await Mood.findAll({});
-//     res.status(200).json(moodData);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-
 // get mood data of logged in user
 router.get('/', withAuth, async (req, res) => {
   try {
@@ -22,6 +13,43 @@ router.get('/', withAuth, async (req, res) => {
       },
     });
     res.status(200).json(moodData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// Post a mood
+router.post('/', withAuth, async (req, res) => {
+  console.log(req.body);
+  try {
+    let newMood;
+    const week = await Mood.findOne({
+      where: {
+        week: req.body.week,
+        user_id: req.session.user_id,
+      },
+    });
+    if (week) {
+      console.log('found week');
+      newMood = await Mood.update(
+        { ...req.body.day },
+        {
+          where: {
+            week: req.body.week,
+            user_id: req.session.user_id,
+          },
+        }
+      );
+      console.log({ newMood });
+    } else {
+      newMood = await Mood.create({
+        week: req.body.week,
+        ...req.body.day,
+        user_id: req.session.user_id,
+      });
+    }
+
+    res.status(200).json(newMood);
   } catch (err) {
     res.status(400).json(err);
   }
