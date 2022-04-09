@@ -9,7 +9,7 @@
     width: 100%;
     height: 15px;
     border-radius: 5px;  
-    outline: none;
+    background-color: lightsteelblue;
   }
 
   .bubble {

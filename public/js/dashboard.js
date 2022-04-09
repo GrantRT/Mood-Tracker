@@ -1,18 +1,18 @@
-const allRanges = document.querySelectorAll(".range-wrap");
+const allRanges = document.querySelectorAll(".slider-card");
 allRanges.forEach(wrap => {
-  const range = wrap.querySelector(".range");
+  const slider = wrap.querySelector(".slider");
   const bubble = wrap.querySelector(".bubble");
 
-  range.addEventListener("input", () => {
-    setBubble(range, bubble);
+  slider.addEventListener("input", () => {
+    setBubble(slider, bubble);
   });
-  setBubble(range, bubble);
+  setBubble(slider, bubble);
 });
 
-function setBubble(range, bubble) {
-  const val = range.value;
-  const min = range.min ? range.min : 0;
-  const max = range.max ? range.max : 100;
+function setBubble(slider, bubble) {
+  const val = slider.value;
+  const min = slider.min ? slider.min : 0;
+  const max = slider.max ? slider.max : 100;
   const newVal = Number(((val - min) * 100) / (max - min));
   bubble.innerHTML = val;
 
