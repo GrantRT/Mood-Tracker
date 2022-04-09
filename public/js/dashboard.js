@@ -1,9 +1,9 @@
-const allRanges = document.querySelectorAll(".slider-card");
-allRanges.forEach(wrap => {
-  const slider = wrap.querySelector(".slider");
-  const bubble = wrap.querySelector(".bubble");
+const allRanges = document.querySelectorAll('.slider-card');
+allRanges.forEach((wrap) => {
+  const slider = wrap.querySelector('.slider');
+  const bubble = wrap.querySelector('.bubble');
 
-  slider.addEventListener("input", () => {
+  slider.addEventListener('input', () => {
     setBubble(slider, bubble);
   });
   setBubble(slider, bubble);
@@ -20,8 +20,6 @@ function setBubble(slider, bubble) {
   bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
 }
 
-// To do: make chart dynamic
-
 mondayDataArr = [];
 tuesdayDataArr = [];
 wednesdayDataArr = [];
@@ -30,20 +28,35 @@ fridayDataArr = [];
 saturdayDataArr = [];
 sundayDataArr = [];
 
-// const getMoodData = () => {
-//   fetch('/api/moods', {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   })
-//     .then((response) => response.json())
-//     .then((data) => {
-//       // data.length -1 to make sure you get the most recent weeks data
-//       const mondayData = data[data.length - 1].monday;
-//       mondayDataArr.push(mondayData);
-//     });
-// };
+// Get todays day
+const todaysDay = () => {
+  const today = new Date();
+  if (today.getDay() == 6) {
+    return 'saturday';
+  }
+};
+
+// Todo: Submit the users current mood to populate the database and chart.
+moodFormHandler = async (event) => {
+  event.preventDefault();
+
+  // Collect values from the mood form
+  const mood = document.querySelector('#myRange').value;
+  let day = { [todaysDay()]: mood };
+  console.log(day);
+  if (mood) {
+    const response = await fetch('/api/moods', {
+      method: 'POST',
+      body: JSON.stringify({ day }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
 
 const getMoodData = async () => {
   const response = await fetch('/api/moods', {
@@ -120,5 +133,4 @@ const renderWeeklyChart = () => {
   const moodChart = new Chart(document.getElementById('moodChart'), config);
 };
 
-
-// get mood data
+document.querySelector('.todays-mood-form').addEventListener('submit', moodFormHandler);
