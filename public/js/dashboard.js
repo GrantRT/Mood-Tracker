@@ -89,21 +89,22 @@ const getMoodData = async () => {
     sundayDataArr.push(sundayDataFirstEntry);
     renderWeeklyChart();
   } else {
-  const mondayData = data[data.length - 1].monday;
-  const tuesdayData = data[data.length - 1].tuesday;
-  const wednesdayData = data[data.length - 1].wednesday;
-  const thursdayData = data[data.length - 1].thursday;
-  const fridayData = data[data.length - 1].friday;
-  const saturdayData = data[data.length - 1].saturday;
-  const sundayData = data[data.length - 1].sunday;
-  mondayDataArr.push(mondayData);
-  tuesdayDataArr.push(tuesdayData);
-  wednesdayDataArr.push(wednesdayData);
-  thursdayDataArr.push(thursdayData);
-  fridayDataArr.push(fridayData);
-  saturdayDataArr.push(saturdayData);
-  sundayDataArr.push(sundayData);
-  renderWeeklyChart();
+    const mondayData = data[data.length - 1].monday;
+    const tuesdayData = data[data.length - 1].tuesday;
+    const wednesdayData = data[data.length - 1].wednesday;
+    const thursdayData = data[data.length - 1].thursday;
+    const fridayData = data[data.length - 1].friday;
+    const saturdayData = data[data.length - 1].saturday;
+    const sundayData = data[data.length - 1].sunday;
+    mondayDataArr.push(mondayData);
+    tuesdayDataArr.push(tuesdayData);
+    wednesdayDataArr.push(wednesdayData);
+    thursdayDataArr.push(thursdayData);
+    fridayDataArr.push(fridayData);
+    saturdayDataArr.push(saturdayData);
+    sundayDataArr.push(sundayData);
+    renderWeeklyChart();
+  }
 };
 
 getMoodData();
