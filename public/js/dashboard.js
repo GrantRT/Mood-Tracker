@@ -73,21 +73,7 @@ const getMoodData = async () => {
   });
   const data = await response.json();
   if (data.length < 1) {
-    const mondayDataFirstEntry = data[0].monday;
-    const tuesdayDataFirstEntry = data[0].tuesday;
-    const wednesdayDataFirstEntry = data[0].wednesday;
-    const thursdayDataFirstEntry = data[0].thursday;
-    const fridayDataFirstEntry = data[0].friday;
-    const saturdayDataFirstEntry = data[0].saturday;
-    const sundayDataFirstEntry = data[0].sunday;
-    mondayDataArr.push(mondayDataFirstEntry);
-    tuesdayDataArr.push(tuesdayDataFirstEntry);
-    wednesdayDataArr.push(wednesdayDataFirstEntry);
-    thursdayDataArr.push(thursdayDataFirstEntry);
-    fridayDataArr.push(fridayDataFirstEntry);
-    saturdayDataArr.push(saturdayDataFirstEntry);
-    sundayDataArr.push(sundayDataFirstEntry);
-    renderWeeklyChart();
+    return;
   } else {
     const mondayData = data[data.length - 1].monday;
     const tuesdayData = data[data.length - 1].tuesday;
