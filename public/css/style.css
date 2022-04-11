@@ -1,4 +1,6 @@
- body {
+ body,
+ .footer
+  {
     background-color: rgb(126, 171, 157);
  }
  
@@ -42,27 +44,31 @@
 }
 
 @media only screen and (min-width: 769px) {
-    .dashboard-card {
-        margin:50px;
+    .dashboard-card,
+    .link-card {
+      margin:50px;
     }
 
   }
 
   @media only screen and (min-width: 1024px) {
-    .dashboard-card {
-        margin:100px
+    .dashboard-card,
+    .link-card {
+      margin:100px
     }
 
   }
 
   @media only screen and (min-width: 1216px) {
-    .dashboard-card {
-        margin:180px;
+    .dashboard-card,
+    .link-card {
+      margin:180px;
     }
   }
 
   @media only screen and (min-width: 1408px) {
-    .dashboard-card {
+    .dashboard-card,
+    .link-card {
         margin:250px;
     }
   }
