@@ -43,21 +43,26 @@
 
 @media only screen and (min-width: 769px) {
     .dashboard-card {
-        margin:25px;
+        margin:50px;
     }
 
   }
 
   @media only screen and (min-width: 1024px) {
     .dashboard-card {
-        margin:30px;
+        margin:100px
     }
 
   }
 
   @media only screen and (min-width: 1216px) {
     .dashboard-card {
-        margin:35px;
+        margin:180px;
     }
   }
 
+  @media only screen and (min-width: 1408px) {
+    .dashboard-card {
+        margin:250px;
+    }
+  }
