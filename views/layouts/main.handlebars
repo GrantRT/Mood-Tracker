@@ -105,47 +105,47 @@
 </nav>
 
 <!-- interface on a tablet device -->
-<nav class="is-hidden-mobile is-hidden-desktop tabs is-boxed is-large success-light">
+<nav class="is-hidden-mobile is-hidden-desktop tabs is-boxed is-large has-background-primary-dark">
   <section class="tabs is boxed">
     <ul>
       <li>
-        <a href="/" class="is-size-4 is-size-2-fullhd has-text-success-dark">
+        <a href="/" class="is-size-4 is-size-2-fullhd has-text-success-light">
           <ion-icon name="home-outline"></ion-icon>
           Home
         </a>
       </li>
       {{#if logged_in}}
       <li>
-        <a href="/dashboard" class="is-size-4 is-size-2-fullhd has-text-success-dark">
+        <a href="/dashboard" class="is-size-4 is-size-2-fullhd has-text-success-light">
           <ion-icon name="cellular-outline"></ion-icon>
           Dashboard
         </a>
       </li>
       <li>
-        <a href="/links" class="is-size-4 is-size-2-fullhd has-text-success-dark">
+        <a href="/links" class="is-size-4 is-size-2-fullhd has-text-success-light">
           <ion-icon name="unlink-outline"></ion-icon>
           Links
           </a>
       </li>
       <li >
-        <a href="/contacts" class=" is-size-4 is-size-2-fullhd has-text-success-dark">
+        <a href="/contacts" class=" is-size-4 is-size-2-fullhd has-text-success-light">
           <ion-icon name="chatbubbles-outline"></ion-icon>
             Contact Us
         </a>
       </li>
       <li class="is-active">
-        <a href="/logout" id="logout-tablet"class=" has-background-primary has-text-success-dark is-size-4 is-size-2-fullhd">
+        <a href="/logout" id="has-background-primary has-text-success-light is-size-4-desktop is-size-2-fullhd">
           <strong>Log Out</strong>
         </a>
       </li>
       {{else}}
-       <li class="is-active">
-        <a href="/signup" class="has-background-primary has-text-success-dark is-size-4-desktop is-size-2-fullhd">
+       <li class="is-active mx-2">
+        <a href="/signup" class="has-background-primary-light has-text-success-dark is-size-4-desktop is-size-2-fullhd">
           <strong>Sign Up</strong>
         </a>
       </li>
-      <li class="is-active">
-        <a href="/login" class="has-background-primary has-text-success-dark is-size-4-desktop is-size-2-fullhd">
+      <li class="is-active mx-2">
+        <a href="/login" class="has-background-primary has-text-success-light is-size-4-desktop is-size-2-fullhd">
           <strong>Log In</strong>
         </a>
       </li>
