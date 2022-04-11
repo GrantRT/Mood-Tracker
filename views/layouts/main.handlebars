@@ -104,14 +104,63 @@
     {{/if}}
 </nav>
 
+<!-- interface on a tablet device -->
+<nav class="tabs is-boxed is-large success-light">
+  <section class="tabs is boxed">
+    <ul>
+      <li>
+        <a href="/" class="is-size-4 is-size-2-fullhd has-text-success-dark">
+          <ion-icon name="home-outline"></ion-icon>
+          Home
+        </a>
+      </li>
+      {{#if logged_in}}
+      <li>
+        <a href="/dashboard" class="is-size-4 is-size-2-fullhd has-text-success-dark">
+          <ion-icon name="cellular-outline"></ion-icon>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="/links" class="is-size-4 is-size-2-fullhd has-text-success-dark">
+          <ion-icon name="unlink-outline"></ion-icon>
+          Links
+          </a>
+      </li>
+      <li >
+        <a href="/contacts" class=" is-size-4 is-size-2-fullhd has-text-success-dark">
+          <ion-icon name="chatbubbles-outline"></ion-icon>
+            Contact Us
+        </a>
+      </li>
+      <li class="is-active">
+        <a href="/logout" id="logout-tablet"class=" has-background-primary has-text-success-dark is-size-4 is-size-2-fullhd">
+          <strong>Log Out</strong>
+        </a>
+      </li>
+      {{else}}
+       <li class="is-active">
+        <a href="/signup" class="has-background-primary has-text-success-dark is-size-4-desktop is-size-2-fullhd">
+          <strong>Sign Up</strong>
+        </a>
+      </li>
+      <li class="is-active">
+        <a href="/login" class="has-background-primary has-text-success-dark is-size-4-desktop is-size-2-fullhd">
+          <strong>Log In</strong>
+        </a>
+      </li>
+    </ul>
+  </section>
+  {{/if}}
 </nav>
-    <div class="card">
-        <header class="card-header has-background-primary">
-            <p class="card-header-title has-text-success-light is-size-4 is-size-2-desktop">Mood Tracker
-              <ion-icon name="happy-outline"></ion-icon>
-            </p>
-        </header>
-    </div>
+
+<div class="card">
+  <header class="card-header has-background-primary">
+    <p class="card-header-title has-text-success-light is-size-4 is-size-2-desktop">Mood Tracker
+      <ion-icon name="happy-outline"></ion-icon>
+    </p>
+  </header>
+</div>
 
 
 <!-- interface on a mobile device -->
