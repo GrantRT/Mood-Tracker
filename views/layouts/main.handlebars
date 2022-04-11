@@ -11,60 +11,100 @@
 </head>
 <body>
 
-
-     <nav class="is-hidden-mobile tabs is-boxed is-large navbar has-background-success-light">
-         <!-- navbar-brand is on the left and is the logo -->
-        <div class="navbar-brand is-hidden-touch ">
-            <a>
-                <img src="/images/smiley.jpeg" width="112" height="28">
+<!-- interface on a desktop device upwards-->
+<nav class="is-hidden-touch navbar has-background-success-light">
+    <div class="navbar-brand is-hidden-touch ">
+        <a>
+          <img src="/images/smiley.jpeg" width="112" height="28">
+        </a>
+    </div>
+    <section class="navbar-menu">
+      <div class="navbar-start">
+          <a href="/" class="navbar-item is-size-4 is-size-2-fullhd has-text-success-dark">
+              <ion-icon name="home-outline"></ion-icon>
+              Home
+          </a>
+          {{#if logged_in}}
+          <a href="/dashboard" class="navbar-item is-size-4 is-size-2-fullhd has-text-success-dark">
+            <ion-icon name="cellular-outline"></ion-icon>
+            Dashboard
+          </a>
+          <a href="/links" class="navbar-item is-size-4 is-size-2-fullhd has-text-success-dark">
+            <ion-icon name="unlink-outline"></ion-icon>
+            Links
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable px-4">
+            <a class=" navbar-link is-size-4 is-size-2-fullhd has-text-success-dark">
+             Contact Us
+           </a>
+          <div class="navbar-dropdown">
+            <div class="columns menu">
+              <div class="column">
+                <ul class="menu-list">
+                    <li>
+                        <a class="logo has-background-primary-dark has-text-success-light is-size-2">Github
+                          <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                        <ul>
+                          <li class="is-size-4"><a href="https://github.com/LisaCR01">Lisa</a></li>
+                          <li class="is-size-4"><a href="https://github.com/GrantRT">Grant</a></li>
+                          <li class="is-size-4"><a href="https://github.com/KJ234">Komal</a></li>
+                        </ul>
+                    </li>
+                </ul>
+              </div>
+              <div class="column">
+                <ul class="menu-list">
+                    <li>
+                        <a class="logo has-background-primary-dark has-text-success-light is-size-2">Email
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </a>
+                        <ul>
+                           <li class="is-size-4"><a href="mailto:lcrgunn@gmail.com">Lisa</a></li>
+                           <li class="is-size-4"><a href="mailto:granto_92@hotmail.com">Grant</a></li>
+                           <li class="is-size-4"><a href="mailto:Komaljaved308@gmail.com">Komal</a></li>
+                        </ul>
+                    </li>
+                </ul>
+              </div>
+              <div class="column">
+                <ul class="menu-list">
+                    <li>
+                        <a class="logo has-background-primary-dark has-text-success-light is-size-2">LinkedIn
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                        <ul>
+                            <li class="is-size-4"><a href="https://www.linkedin.com/in/LisaCR01">Lisa</a></li>
+                            <li class="is-size-4"><a href="https://www.linkedin.com/in/grant-tolhurst-6aa374224/">Grant</a></li>
+                            <li class="is-size-4"><a href="https://www.linkedin.com/in/komal-javed-2b55a3232/">Komal</a></li>
+                        </ul>
+                     </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+       </div>
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a href="/logout" id="logout"  class=" button is-primary is-large">
+              <div>Log Out</div>
             </a>
+            {{else}}
+            <a href="/signup" class=" button is-light is-large">
+              <div>Sign Up</div>
+            </a>
+            <a href="/login" class="button is-primary is-large">
+              <strong> Log In </strong>
+            </a>
+          </div>
         </div>
-        <section class="tabs is boxed">
-            <ul>
-              <li>
-                <a href="/" class="is-size-4 is-size-2-fullhd has-text-success-dark">
-                    <ion-icon name="home-outline"></ion-icon>
-                    Home
-                </a>
-              </li>
-                  {{#if logged_in}}
-              <li>
-                  <a href="/dashboard" class="is-size-4 is-size-2-fullhd has-text-success-dark">
-                    <ion-icon name="cellular-outline"></ion-icon>
-                    Dashboard
-                 </a>
-              </li>
-               <li>
-                  <a href="/links" class="is-size-4 is-size-2-fullhd has-text-success-dark">
-                   <ion-icon name="unlink-outline"></ion-icon>
-                    Links
-                 </a>
-              </li>
-              <li >
-                <a href="#Contact-Information" class=" is-size-4 is-size-2-fullhd has-text-success-dark">
-                    <ion-icon name="chatbubbles-outline"></ion-icon>
-                    Contact Us
-                </a>
-              </li>
-              <li class="is-active">
-                <a href="/logout" id="logout" class="has-background-primary has-text-success-dark is-size-4 is-size-2-fullhd">
-                    <strong>Log Out</strong>
-                </a>
-              </li>
-              {{else}}
-              <li class="is-active">
-                <a href="/signup" class="has-background-primary has-text-success-dark is-size-4-desktop is-size-2-fullhd">
-                    <strong>Sign Up</strong>
-                </a>
-              </li>
-              <li class="is-active">
-                <a href="/login" class="has-background-primary has-text-success-dark is-size-4-desktop is-size-2-fullhd">
-                    <strong>Log In</strong>
-                </a>
-              </li>
-        </section>
-        {{/if}}
-    </nav>
+    </div>
+    {{/if}}
+</nav>
+
+</nav>
     <div class="card">
         <header class="card-header has-background-primary">
             <p class="card-header-title has-text-success-light is-size-4 is-size-2-desktop">Mood Tracker
@@ -74,7 +114,7 @@
     </div>
 
 
-<!-- viewport from a mobile device -->
+<!-- interface on a mobile device -->
 <nav class="menu is-hidden-tablet">
   <section>
             <ul class=" menu-list level">
