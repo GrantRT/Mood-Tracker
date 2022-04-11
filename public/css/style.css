@@ -30,6 +30,10 @@
     width:100%
   }
 
+  .logo {
+    width: 300px;
+  }
+
   @media only screen and (max-device-width : 768px) {
     .dashboard-card {
         margin:0px;
