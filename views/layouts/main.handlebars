@@ -105,9 +105,8 @@
 </nav>
 
 <!-- interface on a tablet device -->
-<nav class="is-hidden-mobile is-hidden-desktop tabs is-boxed is-large has-background-primary-dark">
-  <section class="tabs is boxed">
-    <ul>
+<nav class="is-hidden-mobile is-hidden-desktop tabs is-centered is-boxed is-large has-background-primary-dark">
+    <ul >
       <li>
         <a href="/" class="is-size-4 has-text-success-light">
           <ion-icon name="home-outline"></ion-icon>
@@ -127,30 +126,33 @@
           Links
           </a>
       </li>
-      <li >
+      <li>
         <a href="/contacts" class=" is-size-4 has-text-success-light">
           <ion-icon name="chatbubbles-outline"></ion-icon>
             Contact Us
         </a>
       </li>
-      <li class="is-active">
-        <a href="/logout" id="has-background-primary has-text-success-light is-size-4">
-          <strong>Log Out</strong>
+      
+      <li>
+        <a href="/logout" id="logout-tablet" class="is-size-4 has-text-success-light">
+        <ion-icon name="exit-outline"></ion-icon>
+          Log Out
         </a>
       </li>
       {{else}}
-       <li class="is-active mx-2">
-        <a href="/signup" class="has-background-primary-light has-text-success-dark is-size-4">
-          <strong>Sign Up</strong>
+       <li>
+        <a href="/signup" class="is-size-4 has-text-success-light">
+        <ion-icon name="person-add-outline"></ion-icon>
+          Sign Up
         </a>
       </li>
-      <li class="is-active mx-2">
-        <a href="/login" class="has-background-primary has-text-success-light is-size-4">
-          <strong>Log In</strong>
+      <li>
+        <a href="/login" class="is-size-4 has-text-success-light">
+        <ion-icon name="enter-outline"></ion-icon>
+          Log In
         </a>
       </li>
     </ul>
-  </section>
   {{/if}}
 </nav>
 
@@ -219,7 +221,7 @@
         <a >
           <img src="/images/smiley.jpeg" width="112" height="28">
         </a>
-        <div class="p-2 has-text-success-dark has-text-weight-bold">A Platform To Spread Positivity</div>
+        <div class=" has-text-success-dark has-text-weight-bold">A Platform To Spread Positivity</div>
       </div>
     </footer>
 
