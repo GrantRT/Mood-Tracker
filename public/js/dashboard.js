@@ -1,5 +1,17 @@
 dayjs.extend(window.dayjs_plugin_weekOfYear);
 
+$("#slider").roundSlider({
+  sliderType: "min-range",
+  min: 0,
+  max: 10,
+  value: 5,
+  editableTooltip: false,
+  radius: 200,
+  width: 60,
+  handleShape: "round",
+  tooltipFormat: "tooltipVal1"
+});
+
 const allRanges = document.querySelectorAll('.slider-card');
 allRanges.forEach((wrap) => {
   const slider = wrap.querySelector('.slider');

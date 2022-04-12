@@ -15,11 +15,8 @@
                 <i class="fa-regular fa-face-grin-squint"></i>
               </span>
        </p>
-       <p class="is-hidden-tablet is-size-4">
-         Please use slide to how you are feeling today out of 0 to 10
-       </p>
       </div>
-      <div class='slider-card'>
+      <div class='slider-card is-hidden-mobile'>
         <input type='range' min='0' max='10' value='50' class='slider' id='myRange' />
         <output class='bubble'></output>
         <label class="level is-hidden-mobile">
@@ -58,6 +55,14 @@
           </span>
         </label>
       </div>
+      <div class="is-hidden-tablet level">
+      <p class="is-size-4 level-item has-text-centered">
+         Please use slide to how you are feeling today out of 0 to 10
+       </p>
+      <div class="level-item has-text-centered">
+        <div id="slider"></div>
+      </div>
+      </div>
     </div>
     <div class="level p-4">
       <div class="level-item has-text-centered">
@@ -71,4 +76,6 @@
 <script src='https://unpkg.com/dayjs@1.8.21/dayjs.min.js'></script>
 <script src='https://unpkg.com/dayjs@1.8.21/plugin/weekOfYear.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>                     
+    <script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script>
 <script src='./js/dashboard.js'></script>

@@ -1,5 +1,4 @@
- body,
- .footer
+ body
   {
     background-color: rgb(126, 171, 157);
  }
@@ -35,6 +34,19 @@
   .logo {
     width: 175px;
   }
+
+  .rs-control .rs-range-color {
+    background-color: #87cf8b;
+}
+.rs-control .rs-path-color {
+    background-color: #ed5e5e;
+}
+.rs-control .rs-handle {
+    background-color: #436864;
+}
+.rs-control .rs-bg-color {
+    background-color: white;
+}
 
   @media only screen and (max-device-width : 768px) {
     .dashboard-card {
