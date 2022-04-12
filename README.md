@@ -33,6 +33,10 @@ I want to
 
 ## Deployed link:
 
+Heorku: https://mood-tracker-gkl.herokuapp.com/
+GitHub repo: https://github.com/GrantRT/MoodTracker.git
+
+
 ## The Project Team :
 
 - [Lisa](https://github.com/LisaCR01)
