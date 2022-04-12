@@ -43,13 +43,20 @@ const fridayDataArr = [];
 const saturdayDataArr = [];
 const sundayDataArr = [];
 
-// Get todays day
+// Get todays day and week
 const todaysDayAndWeek = () => {
   const today = new Date();
   const week = dayjs(today).week();
   const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-  const day = daysOfWeek[today.getDay()];
+  let day;
+  const daySelect = document.getElementById('day-select').value;
+  const dayToday = daysOfWeek[today.getDay()];
 
+  if (daySelect) {
+    day = daySelect;
+  } else {
+    day = dayToday;
+  }
   return { day, week };
 };
 
