@@ -1,8 +1,8 @@
- body
-  {
-    background-color: rgb(126, 171, 157);
- }
- 
+body,
+.footer{
+  background-color: rgb(126, 171, 157);
+}
+
  #slider-card {
     width: 100%; /* Width of the outside container */
     position: relative;
@@ -35,17 +35,26 @@
     width: 175px;
   }
 
-  .rs-control .rs-range-color {
-    background-color: #87cf8b;
+
+
+.rs-range-color  {
+  background: radial-gradient(ellipse at bottom, rgb(163, 205, 159) 0%, rgb(12, 75, 32) 34%, rgb(7, 252, 68) 66%, rgb(50, 133, 34) 100%);
 }
-.rs-control .rs-path-color {
-    background-color: #ed5e5e;
+
+.rs-path-color  {
+  background: radial-gradient(ellipse at bottom, rgb(242, 177, 177) 0%, rgb(245, 78, 28) 34%, rgb(230, 157, 157) 66%, rgb(63, 28, 28) 100%);
 }
-.rs-control .rs-handle {
-    background-color: #436864;
+
+.rs-handle  {
+  background: radial-gradient(ellipse at center, rgba(228, 228, 228, 1) 0%, rgb(227, 208, 208) 34%, rgb(102, 91, 98) 100%);
 }
-.rs-control .rs-bg-color {
-    background-color: white;
+.rs-border  {
+  border-color: rgb(136, 40, 40);
+}
+
+#slider .rs-tooltip {
+  font-size: 50px;
+  font-weight: bold;
 }
 
   @media only screen and (max-device-width : 768px) {
