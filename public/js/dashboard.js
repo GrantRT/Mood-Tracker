@@ -1,15 +1,16 @@
 dayjs.extend(window.dayjs_plugin_weekOfYear);
 
-$("#slider").roundSlider({
-  sliderType: "min-range",
+$('#slider').roundSlider({
+  sliderType: 'min-range',
   min: 0,
   max: 10,
-  value: 5,
+  value: '',
   editableTooltip: false,
   radius: 200,
   width: 60,
-  handleShape: "round",
-  tooltipFormat: "tooltipVal1"
+  handleShape: 'round',
+  tooltipFormat: 'tooltipVal1',
+  drag: function (event, ui) {},
 });
 
 const allRanges = document.querySelectorAll('.slider-card');
@@ -57,11 +58,11 @@ const moodFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the mood form
-  const mood = document.querySelector('#myRange').value;
+  const mood = $('#slider').roundSlider('option', 'value') || document.querySelector('#myRange').value;
   const { week, day } = todaysDayAndWeek();
   const dayMood = { [day]: parseInt(mood) };
 
-  if (mood <= 3) {
+  if (mood <= 4) {
     alert("We've noticed your mood is low today, please view the links page for help");
   }
 
