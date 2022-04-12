@@ -49,6 +49,10 @@ const moodFormHandler = async (event) => {
   const { week, day } = todaysDayAndWeek();
   const dayMood = { [day]: parseInt(mood) };
 
+  if (mood <= 3) {
+    alert("We've noticed your mood is low today, please view the links page for help");
+  }
+
   if (mood) {
     const response = await fetch('/api/moods', {
       method: 'POST',
