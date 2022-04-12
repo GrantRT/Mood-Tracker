@@ -31,9 +31,15 @@ I want to
 
 ## Application Screenshots
 
+<img width="944" alt="Screenshot 2022-04-12 190717" src="https://user-images.githubusercontent.com/95283510/163030618-a5e255f1-5f2c-4495-ad21-d56882b3df7b.png">
+<img width="903" alt="Screenshot 2022-04-12 190648" src="https://user-images.githubusercontent.com/95283510/163030620-66636500-76ef-4126-8839-826febbfe53e.png">
+
+
+
 ## Deployed link:
 
 Heorku: https://mood-tracker-gkl.herokuapp.com/
+
 GitHub repo: https://github.com/GrantRT/MoodTracker.git
 
 
