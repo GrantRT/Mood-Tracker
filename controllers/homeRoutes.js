@@ -1,10 +1,10 @@
-const router = require("express").Router();
+const router = require('express').Router();
 // const { User, Mood } = require('../../models');
-const withAuth = require("../utils/auth");
+const withAuth = require('../utils/auth');
 
-router.get("/", async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    res.render("homepage", {
+    res.render('homepage', {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -12,39 +12,39 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/login", (req, res) => {
+router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to the homepage
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect('/');
     return;
   }
 
-  res.render("login");
+  res.render('login');
 });
 
-router.get("/logout", (req, res) => {
+router.get('/logout', (req, res) => {
   // If the user is already logged in, redirect the request to the homepage
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect('/');
     return;
   }
 
-  res.render("logout");
+  res.render('logout');
 });
 
-router.get("/signup", (req, res) => {
+router.get('/signup', (req, res) => {
   // If the user is already logged in, redirect the request to the homepage
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect('/');
     return;
   }
 
-  res.render("signup");
+  res.render('signup');
 });
 
-router.get("/dashboard", async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    res.render("dashboard", {
+    res.render('dashboard', {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -52,17 +52,17 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
-router.get("/links", async (req, res) => {
+router.get('/links', withAuth, async (req, res) => {
   try {
-    res.render("links", { logged_in: req.session.logged_in });
+    res.render('links', { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/contacts", async (req, res) => {
+router.get('/contacts', async (req, res) => {
   try {
-    res.render("contacts", { logged_in: req.session.logged_in });
+    res.render('contacts', { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
