@@ -87,12 +87,18 @@
        </div>
     </div>
     <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
+      <div class="navbar-item">
+        <div class="buttons">
             <a href="/logout" id="logout"  class=" button is-primary is-large">
               <div>Log Out</div>
             </a>
-            {{else}}
+        </div>
+      </div>
+    </div>
+      {{else}}
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
             <a href="/signup" class=" button is-light is-large">
               <div>Sign Up</div>
             </a>
@@ -101,8 +107,8 @@
             </a>
           </div>
         </div>
-    </div>
-    {{/if}}
+      </div>
+     {{/if}}
 </nav>
 
 <div class="card">
