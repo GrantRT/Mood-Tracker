@@ -1,32 +1,37 @@
-<section class='hero-body'>
-  <div class='card m-6'>
-    <header class='card-header has-background-primary-light'>
-      <p class='card-header-title has-text-success-dark is-size-2'>Hello!</p>
-    </header>
-    <div class='card-content has-background-primary'>
-      <p>Hello and welcome to our site! This is a platform centred around supporting people’s mental health through self help. The way in which it is cable of assisting you is by tracking your mood
-        throughout the week.
-      </p>
-      <br />
-      <form class='search-form'>
-        <p>Search for a friend's mood:</p>
-        <div id='search-username' class='field has-addons'>
-          <div class='control'>
-            <input id='search-input' class='input' type='text' placeholder="Enter your friend's username" />
-          </div>
-          <div class='control'>
-            <button type='submit' class='button is-info'>
-              Search
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div id='user-Chart'>
-      <canvas id='friendMoodChart'></canvas>
-    </div>
-  </div>
 
-</section>
-<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
-<script src='./js/homepage.js'></script>
+<section class='hero-body is-desktop'>
+    <div class='card m-6 has-background-primary-light'>
+      <header class='card-header has-background-primary'>
+        <p class='card-header-title has-text-white is-size-2'>Connect With Friends</p>
+      </header>
+      <div class='card-content'>
+          <div class="block">
+            <p class="subtitle has-text-success-dark is-size-3 ">Utilise our platform to check in on your friends!
+            </p>
+          </div>
+        <div class="box m-6-tablet">
+            <form class='search-form p-4'>
+                <p class="subtitle has-text-success-dark is-size-3">Search for a friend's mood:</p>
+                <div id='search-username' class='field has-addons'>
+                  <div class='control'>
+                    <input id='search-input' class='input is-size-4' type='text' placeholder="Enter Username Here" />
+                  </div>
+                  <div class='control'>
+                    <button type='submit' class='button is-primary is-size-4'>
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </form>
+        </div>
+      </div>
+      <div class="card-image">
+        <div id='user-Chart'>
+            <canvas id='friendMoodChart'></canvas>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+  <script src='./js/homepage.js'></script>
