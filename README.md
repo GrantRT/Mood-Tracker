@@ -16,14 +16,22 @@ I want to
 
 ## Technology Used
 
-- JAVASCRIPT
+- JavaScript
+- jQuery
 - CSS
-- MYSQL, sequelize
+- MYSQL2 package
+- Sequelize package
+- Dotenv package
+- Nodemon package
+- Bcrypt package
 - Node.js
 - Express.js
 - Handlebars
 - Chart.js
+- Round slider jQuery plugin
 - Bulma CSS Framework
+- Font Awesome 5
+- Ionicons
 
 ## Obstacles
 
