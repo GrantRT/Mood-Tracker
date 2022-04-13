@@ -57,6 +57,12 @@ body,
   font-weight: bold;
 }
 
+select {
+  border-radius: 3px;
+  border-color: rgb(204, 212, 220);
+  background: #73AD21;
+}
+
   @media only screen and (max-device-width : 768px) {
     .dashboard-card {
         margin:0px;
