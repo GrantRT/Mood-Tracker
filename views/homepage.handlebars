@@ -7,7 +7,26 @@
       <p>Hello and welcome to our site! This is a platform centred around supporting people’s mental health through self help. The way in which it is cable of assisting you is by tracking your mood
         throughout the week.
       </p>
+      <br />
+      <form class='search-form'>
+        <p>Search for a friend's mood:</p>
+        <div id='search-username' class='field has-addons'>
+          <div class='control'>
+            <input id='search-input' class='input' type='text' placeholder="Enter your friend's username" />
+          </div>
+          <div class='control'>
+            <button type='submit' class='button is-info'>
+              Search
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id='user-Chart'>
+      <canvas id='friendMoodChart'></canvas>
     </div>
   </div>
 
 </section>
+<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+<script src='./js/homepage.js'></script>
