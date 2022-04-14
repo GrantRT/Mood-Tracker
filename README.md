@@ -64,8 +64,14 @@ S0 THAT I can be more aware of mine and their's current mental health
 
 ## Application Screenshots
 
-<img width="944" alt="Screenshot 2022-04-12 190717" src="https://user-images.githubusercontent.com/95283510/163030618-a5e255f1-5f2c-4495-ad21-d56882b3df7b.png">
-<img width="903" alt="Screenshot 2022-04-12 190648" src="https://user-images.githubusercontent.com/95283510/163030620-66636500-76ef-4126-8839-826febbfe53e.png">
+### Desktop Interface 1024px and above
+![Desktop Interface](./public/images/screencapture-localhost-3001-dashboard-2022-04-14-20_17_01.png)
+
+### Tablet Interface 769px to 1023px
+![Tablet Interface](./public/images/screencapture-localhost-3001-dashboard-2022-04-14-20_17_01.png)
+
+### Phone interface under 768px 
+![Phone Interface](./public/images/screencapture-localhost-3001-dashboard-2022-04-14-20_17_01.png)
 
 
 
