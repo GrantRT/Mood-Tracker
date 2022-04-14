@@ -56,7 +56,7 @@ const todaysDayAndWeek = () => {
   const dayToday = daysOfWeek[today.getDay()];
   // If a day is selected use it, otherwise use today's day
   const day = daySelect || dayToday;
-  return { day, week };
+  return { day, week, dayToday };
 };
 
 // Submit the users current mood to populate the database and chart.
@@ -68,9 +68,6 @@ const moodFormHandler = async (event) => {
   const { week, day } = todaysDayAndWeek();
   const dayMood = { [day]: parseInt(mood) };
 
-  if (mood <= 4) {
-    alert("We've noticed your mood is low today, please view the links page for help");
-  }
   // If the user submits a mood, POST the data
   if (mood) {
     const response = await fetch('/api/moods', {
@@ -78,11 +75,12 @@ const moodFormHandler = async (event) => {
       body: JSON.stringify({ week, day: dayMood }),
       headers: { 'Content-Type': 'application/json' },
     });
+
     if (response.ok) {
       document.location.reload();
-    } else {
-      alert(response.statusText);
     }
+  } else {
+    alert(response.statusText);
   }
 };
 
@@ -113,6 +111,32 @@ const getMoodData = async () => {
     saturdayDataArr.push(saturdayData);
     sundayDataArr.push(sundayData);
     renderWeeklyChart();
+    const moodMessageRender = () => {
+      document.querySelector('#dashboard-main-card-text').textContent = "We've noticed your mood is low today, please view the links page for help";
+      var lowMood = document.querySelector('#dashboard-main-card-text');
+      lowMood.classList = 'subtitle has-text-success-dark is-size-4 has-text-weight-bold';
+    };
+
+    // Function to check if todays mood is low, if it is then render the message
+    const dayAndMoodChecker = () => {
+      const { dayToday } = todaysDayAndWeek();
+      if (dayToday === 'monday' && mondayDataArr[mondayDataArr.length - 1] <= 4) {
+        moodMessageRender();
+      } else if (dayToday === 'tuseday' && tuesdayDataArr[tuesdayDataArr.length - 1] <= 4) {
+        moodMessageRender();
+      } else if (dayToday === 'wednesday' && wednesdayDataArr[wednesdayDataArr.length - 1] <= 4) {
+        moodMessageRender();
+      } else if (dayToday === 'thursday' && thursdayDataArr[thursdayDataArr.length - 1] <= 4) {
+        moodMessageRender();
+      } else if (dayToday === 'friday' && fridayDataArr[fridayDataArr.length - 1] <= 4) {
+        moodMessageRender();
+      } else if (dayToday === 'saturday' && saturdayDataArr[saturdayDataArr.length - 1] <= 4) {
+        moodMessageRender();
+      } else if (dayToday === 'sunday' && sundayDataArr[sundayDataArr.length - 1] <= 4) {
+        moodMessageRender();
+      }
+    };
+    dayAndMoodChecker();
   }
 };
 

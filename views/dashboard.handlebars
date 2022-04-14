@@ -1,5 +1,6 @@
-<div class='dashboard-card card'>
+<div id='dashboard-main-card' class='dashboard-card card'>
   <div class='card-image'>
+    <div id='dashboard-main-card-text'></div>
     <canvas id='moodChart'></canvas>
   </div>
   <form id='sliders' class='todays-mood-form'>
@@ -36,7 +37,7 @@
           <span class='level-item icon has-text-centered'>
             <i class='far fa-frown-open fa-2x'></i>
           </span>
-          <span class='level-item icon has-text-centered '>
+          <span class='level-item icon has-text-centered'>
             <i class='fa-regular fa-face-meh fa-2x'></i>
           </span>
           <span class='level-item icon has-text-centered'>
@@ -52,7 +53,7 @@
             <i class='fa-regular fa-face-grin-squint fa-2x'></i>
           </span>
           <span class='level-item icon has-text-centered'>
-            <i class="far fa-grin-tears fa-2x"></i>
+            <i class='far fa-grin-tears fa-2x'></i>
           </span>
         </label>
       </div>
@@ -65,28 +66,28 @@
         </div>
       </div>
     </div>
-    <div class="columns">
-    <div class='level p-4 column'>
-      <div class='level-item has-text-centered'>
-        <button type='submit' class='button has-background-primary-light has-text-success-dark'>
-          <div class='has-text-weight-bold is-size-4-tablet'>Submit</div>
-        </button>
+    <div class='columns'>
+      <div class='level p-4 column'>
+        <div class='level-item has-text-centered'>
+          <button type='submit' class='button has-background-primary-light has-text-success-dark'>
+            <div class='has-text-weight-bold is-size-4-tablet'>Submit</div>
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="column level">
-      <div class="level-item has-text-centered">
-    <select name='days' id='day-select' class='has-text-weight-bold  is-size-4-tablet has-background-primary-light has-text-success-dark p-1'>
-      <option value=''>Choose A Different Day</option>
-      <option value='monday'>Monday</option>
-      <option value='tuesday'>Tuesday</option>
-      <option value='wednesday'>Wednesday</option>
-      <option value='thursday'>Thursday</option>
-      <option value='friday'>Friday</option>
-      <option value='saturday'>Saturday</option>
-      <option value='sunday'>Sunday</option>
-    </select>
-    </div>
-    </div>
+      <div class='column level'>
+        <div class='level-item has-text-centered'>
+          <select name='days' id='day-select' class='has-text-weight-bold is-size-4-tablet has-background-primary-light has-text-success-dark p-1'>
+            <option value=''>Choose A Different Day</option>
+            <option value='monday'>Monday</option>
+            <option value='tuesday'>Tuesday</option>
+            <option value='wednesday'>Wednesday</option>
+            <option value='thursday'>Thursday</option>
+            <option value='friday'>Friday</option>
+            <option value='saturday'>Saturday</option>
+            <option value='sunday'>Sunday</option>
+          </select>
+        </div>
+      </div>
     </div>
 
   </form>
