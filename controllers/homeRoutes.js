@@ -1,5 +1,4 @@
 const router = require('express').Router();
-// const { User, Mood } = require('../../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -23,7 +22,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-  // If the user is already logged in, redirect the request to the homepage
+  // If the user is logged in, log them out and redirect the request to the homepage
   if (req.session.logged_in) {
     res.redirect('/');
     return;
