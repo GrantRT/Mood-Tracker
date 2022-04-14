@@ -65,7 +65,7 @@ S0 THAT I can be more aware of mine and their's current mental health
 ## Application Screenshots
 
 ### Desktop Interface 1024px and above
-![Desktop Interface](./public/images/Tablet.png)
+![Desktop Interface](./public/images/Desktop.png)
 
 ### Tablet Interface 769px to 1023px
 ![Tablet Interface](/.public/images/Tablet.png)
