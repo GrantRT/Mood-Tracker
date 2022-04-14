@@ -1,3 +1,4 @@
+// Empty arrays for each day of the week to be populated with user data
 const mondayDataArr = [];
 const tuesdayDataArr = [];
 const wednesdayDataArr = [];
@@ -6,13 +7,13 @@ const fridayDataArr = [];
 const saturdayDataArr = [];
 const sundayDataArr = [];
 
-// TODO: search for a user by username
+// Search for a user by username
 const searchFormHandler = async (event) => {
   event.preventDefault();
   try {
     // Collect values from the search form
     const username = document.querySelector('#search-input').value;
-
+    // GET the user data so that we can get the user's ID
     if (username) {
       const response = await fetch(`/api/users/${username}`, {
         method: 'GET',
@@ -21,6 +22,7 @@ const searchFormHandler = async (event) => {
         },
       });
       const userData = await response.json();
+      // We then use the user's ID to perform a fetch request to GET the user's mood data
       const userId = userData[0].id;
       const getMoodData = async () => {
         const response = await fetch(`/api/moods/${userId}`, {
