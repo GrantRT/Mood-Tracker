@@ -48,19 +48,14 @@ const todaysDayAndWeek = () => {
   const today = new Date();
   const week = dayjs(today).week();
   const daysOfWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-  let day;
   const daySelect = document.getElementById('day-select').value;
   const dayToday = daysOfWeek[today.getDay()];
-
-  if (daySelect) {
-    day = daySelect;
-  } else {
-    day = dayToday;
-  }
+  // If a day is selected use it, otherwise use today's day
+  const day = daySelect || dayToday;
   return { day, week };
 };
 
-// Todo: Submit the users current mood to populate the database and chart.
+// Submit the users current mood to populate the database and chart.
 const moodFormHandler = async (event) => {
   event.preventDefault();
 
