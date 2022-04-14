@@ -105,7 +105,9 @@ const searchFormHandler = async (event) => {
       };
     }
   } catch {
-    alert('Sorry, this username does not exist');
+    document.querySelector("#user-name").innerHTML='Sorry, this username does not exist'
+    var userName = document.querySelector("#user-name")
+    userName.classList = "subtitle has-text-success-dark is-size-4 has-text-weight-bold"
   }
 };
 
