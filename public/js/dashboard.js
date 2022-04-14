@@ -1,5 +1,7 @@
+// Bring in day.js to be used to determine the current week
 dayjs.extend(window.dayjs_plugin_weekOfYear);
 
+// Logic for the round slider to only be shown on mobile devices
 $('#slider').roundSlider({
   sliderType: 'min-range',
   min: 0,
@@ -13,6 +15,7 @@ $('#slider').roundSlider({
   drag: function (event, ui) {},
 });
 
+// Logic for the normal slider to be shown on larger devices
 const allRanges = document.querySelectorAll('.slider-card');
 allRanges.forEach((wrap) => {
   const slider = wrap.querySelector('.slider');
@@ -35,6 +38,7 @@ function setBubble(slider, bubble) {
   bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
 }
 
+// Empty arrays for each day of the week to be populated with user data
 const mondayDataArr = [];
 const tuesdayDataArr = [];
 const wednesdayDataArr = [];
@@ -67,14 +71,13 @@ const moodFormHandler = async (event) => {
   if (mood <= 4) {
     alert("We've noticed your mood is low today, please view the links page for help");
   }
-
+  // If the user submits a mood, POST the data
   if (mood) {
     const response = await fetch('/api/moods', {
       method: 'POST',
       body: JSON.stringify({ week, day: dayMood }),
       headers: { 'Content-Type': 'application/json' },
     });
-    console.log(response);
     if (response.ok) {
       document.location.reload();
     } else {
@@ -83,6 +86,7 @@ const moodFormHandler = async (event) => {
   }
 };
 
+// GET the user's mood data
 const getMoodData = async () => {
   const response = await fetch('/api/moods', {
     method: 'GET',
