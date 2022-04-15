@@ -112,9 +112,16 @@ const getMoodData = async () => {
     sundayDataArr.push(sundayData);
     renderWeeklyChart();
     const moodMessageRender = () => {
-      document.querySelector('#dashboard-main-card-text').textContent = "We've noticed your mood is low today, please view the links page for help";
+      document.querySelector('#dashboard-main-card-text').textContent = "We've noticed your mood is low today, please view the links page for help ";
       var lowMood = document.querySelector('#dashboard-main-card-text');
-      lowMood.classList = 'subtitle has-text-success-dark is-size-4 has-text-weight-bold';
+      lowMood.classList = 'card-header-title level-item has-text-centered has-text-white has-text-weight-bold';
+      var lowMoodHeader = document.querySelector('#bad-mood-header')
+      lowMoodHeader.classList = 'has-background-primary level'
+      let text = "Click here for Links";
+      let result = text.link("/links");
+      document.getElementById("link-good-mood").innerHTML = result;
+      var goodLinks = document.querySelector('#link-good-mood');
+      goodLinks.classList = 'level-item has-text-centered m-2';
     };
 
     // Function to check if todays mood is low, if it is then render the message
