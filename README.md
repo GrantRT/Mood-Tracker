@@ -84,7 +84,12 @@ GitHub repo: https://github.com/GrantRT/MoodTracker.git
 
 ## The Project Team :
 
+### Githubs
 - [Lisa](https://github.com/LisaCR01)
 - [Grant](https://github.com/GrantRT)
 - [Komal](https://github.com/KJ234)
 
+### Emails
+- [Lisa](mailto:lcrgunn@gmail.com)
+- [Grant](mailto:granto_92@hotmail.com)
+- [Komal](mailto:Komaljaved308@gmail.com)
