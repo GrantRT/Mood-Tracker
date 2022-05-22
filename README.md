@@ -77,7 +77,7 @@ S0 THAT I can be more aware of mine and their's current mental health
 
 ## Deployed link:
 
-Heorku: https://mood-tracker-gkl.herokuapp.com/
+Heroku: https://mood-tracker-gkl.herokuapp.com/
 
 GitHub repo: https://github.com/GrantRT/MoodTracker.git
 
